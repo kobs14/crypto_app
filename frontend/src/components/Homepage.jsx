@@ -49,7 +49,6 @@ const Homepage = () => {
                          <Title className="text-sm"><Link to='/news'>Show More</Link></Title>
                     </div>
                     <News simplified/>
-                    <Services />
             </div>
         </div>
      </div>

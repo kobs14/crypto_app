@@ -16,6 +16,8 @@ function linkToPage(title) {
       return '/news';
     case "Wallets":
       return '/cryptocurrencies';
+    case "Login":
+      return '/login';
     default:
       return '/';
   }
@@ -27,12 +29,11 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleClick = (path) => {
-        console.log("path is: " + path);
         navigate(path);
     }
 
     const handleClickTest = () => {
-      console.log("navBBarItem Clecked!");
+      console.log("navBarItem Clecked!");
     }
 
     const NavBarItem = ({ title, classprops }) => (
@@ -50,7 +51,7 @@ const Navbar = () => {
         {["Cryptocurrencies", "Exchanges", "News", "Wallets"].map((item, index) => (
           <NavBarItem key={item + index} title={item}/>
         ))}
-        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]">
+        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]" onClick={() => handleClick(linkToPage("Login"))}>
           Login
         </li>
       </ul>

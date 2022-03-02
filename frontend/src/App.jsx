@@ -3,7 +3,7 @@ import { Footer, Navbar } from "./components"
 import { Route, Routes, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
-import { Homepage, Cryptocurrencies, News } from './components'
+import { Homepage, Cryptocurrencies, News, LoginForm, Services } from './components'
 import './App.css'
 import { formatCountdown } from 'antd/lib/statistic/utils';
 
@@ -20,10 +20,12 @@ const App = () => {
               <Route exact path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
               {/* <Route exact path="/crypto/:coinId" element={<CryptoDetails/>}/> */}
               <Route exact path="/news" element={<News/>}/>
+              <Route exact path="/login" element={<LoginForm/>}/>
             </Routes>
           </div>
         </Layout>
       </div>
+      <Services />
       <Footer/>
     </div>
   )
