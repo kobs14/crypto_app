@@ -26,7 +26,7 @@ const Cryptocurrencies = ({simplified}) => {
     return (
         <>
             {!simplified && (
-               <div className='search-crypto'>
+               <div className='flex justify-center'>
                <Input placeholder='Search Cryptocurrency' onChange={(e) => setSearchTerm(e.target.value)} />
              </div> 
              )}
