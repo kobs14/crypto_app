@@ -8,6 +8,7 @@ export default configureStore({
       [cryptoApi.reducerPath]: cryptoApi.reducer,
       [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer
     },
+    // need to modify to booth reducers
     middleware: (getDefualtMiddleware) => {
       return getDefualtMiddleware().concat(cryptoApi.middleware);
     },
