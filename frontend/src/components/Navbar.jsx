@@ -45,7 +45,7 @@ const Navbar = () => {
     return (
         <nav className="w-full flex md:justify-center justify-between items-center p-4">
             <div className="md:flex-[0.5] flex-initial justify-center items-center">
-                 <img src={cryptocurrency} alt="logo" className="w-20 cursor-pointer" />
+                 <img src={cryptocurrency} alt="logo" className="w-20 cursor-pointer" onClick={() => handleClick("/")}/>
             </div>
             <ul className="text-white md:flex hidden list-none flex-row justify-between items-center flex-initial">
         {["Cryptocurrencies", "Exchanges", "News", "Wallets"].map((item, index) => (

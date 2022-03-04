@@ -32,7 +32,10 @@ const Cryptocurrencies = ({simplified}) => {
              )}
              {cryptos?.map(coin => {
                 return (
+
+                <Link to={`/crypto/${coin.uuid}`} key={coin.uuid}>
                     <Coin
+                        // onClick={() => handleClick(linkToPage("Login"))}
                         key={coin.uuid}
                         name={coin.name}
                         price={coin.price}
@@ -42,6 +45,7 @@ const Cryptocurrencies = ({simplified}) => {
                         image={coin.iconUrl}
                         priceChange={coin.change}
                     />
+                </Link>
                 );
             })}
              {/* <Row 
