@@ -1,14 +1,20 @@
-import React from "react";
+import React , { useState, useEffect  } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 const Profile = () => {
   const { user: currentUser } = useSelector((state) => state.auth);
+  const [loged, setLoged] = useState(true);
   const navigateTo = useNavigate();
 
+  const handleLogoutRedirect = () => navigateTo('/login');
+
+  useEffect(() => {
+    navigateTo('/login');;
+  }, [loged]);
+
   if (!currentUser) {
-    // return <Redirect to="/login" />;
-    navigateTo('/login');
+    setLoged(false);
   }
 
   return (
