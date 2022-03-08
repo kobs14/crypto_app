@@ -54,9 +54,9 @@ const Login = (props) => {
   if (isLoggedIn) {
     // return <Redirect to="/profile" />;
 
-    console.log("Need to navigate to /profile");
+    // console.log("Need to navigate to /profile");
 
-    // navigateTo('/profile');
+    navigateTo('/profile');
   }
 
   return (

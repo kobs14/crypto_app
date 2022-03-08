@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { clearMessage } from "../services/slices/message";
+
+import { logout } from "../services/slices/auth";
 
 import cryptocurrency from "../../images/cryptocurrency.png";
 
@@ -26,15 +30,33 @@ function linkToPage(title) {
 
 const Navbar = () => {
     const [toggleMenu, setToggleMenu] = React.useState(false);
+    const { user: currentUser } = useSelector((state) => state.auth);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+      dispatch(clearMessage());
+    }, [dispatch]);
 
     const handleClick = (path) => {
         navigate(path);
     }
 
-    const handleClickTest = () => {
-      console.log("navBarItem Clecked!");
-    }
+    const handleLogout = () => {
+      console.log("LOgging out: or at leat trying!")
+      setLoading(true);
+  
+      dispatch(logout())
+        .unwrap()
+        .then(() => {
+          props.history.push("/");
+          window.location.reload();
+        })
+        .catch(() => {
+          setLoading(false);
+        });
+    };
 
     const NavBarItem = ({ title, classprops }) => (
       <li className={`mx-4 cursor-pointer ${classprops}`} onClick={() => handleClick(linkToPage(title))}>
@@ -51,9 +73,13 @@ const Navbar = () => {
         {["Cryptocurrencies", "Exchanges", "News", "Wallets"].map((item, index) => (
           <NavBarItem key={item + index} title={item}/>
         ))}
+        {currentUser?
+        <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]" onClick={() => handleLogout()}>
+          Log out
+        </li>:
         <li className="bg-[#2952e3] py-2 px-7 mx-4 rounded-full cursor-pointer hover:bg-[#2546bd]" onClick={() => handleClick(linkToPage("Login"))}>
           Login
-        </li>
+        </li>}
       </ul>
       <div className="flex relative">
         {!toggleMenu && (
