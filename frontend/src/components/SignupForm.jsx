@@ -6,37 +6,74 @@ import googlePng from "../../images/google.png";
 
 
 const SignupForm = () => {
-  // const [credentials, setCredentials] = useState({ username: '', password: '' });
-  // const [errors, setErrors] = useState({});
+  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const [errors, setErrors] = useState({});
 
-  // const handleLoginForm = (evt) => {
-  //   evt.preventDefault();
+  const handleLoginForm = (evt) => {
+    evt.preventDefault();
 
-  //   setErrors(errors => ({ ...validateCredentials(credentials) }));
-  // };
+    setErrors(errors => ({ ...validateCredentials(credentials) }));
+  };
 
-  // const validateCredentials = (credentials) => {
-  //   let errors = {};
+  const validateCredentials = (credentials) => {
+    let errors = {};
 
-  //   if (credentials.username === '') {
-  //     errors = Object.assign(errors, {
-  //       username: 'This field is required',
-  //     });
-  //   }
+    if (credentials.username === '') {
+      errors = Object.assign(errors, {
+        username: 'This field is required',
+      });
+    }
 
-  //   if (credentials.password === '') {
-  //     errors = Object.assign(errors, {
-  //       password: 'This field is required',
-  //     });
-  //   }
+    if (credentials.password === '') {
+      errors = Object.assign(errors, {
+        password: 'This field is required',
+      });
+    }
 
-  //   return errors;
-  // }
+    return errors;
+  }
 
-  // const handleInputChange = (evt) => {
-  //   evt.persist()
-  //   setCredentials(credentials => ({ ...credentials, [evt.target.name]: evt.target.value }));
-  // }
+  const handleInputChange = (evt) => {
+    evt.persist()
+    setCredentials(credentials => ({ ...credentials, [evt.target.name]: evt.target.value }));
+  }
+
+
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    fetch("http://localhost:8080/login", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: formData.get('email'),
+        password: formData.get('password'),
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if(data.fieldErrors) {
+          data.fieldErrors.forEach(fieldError => {
+            if(fieldError.field === 'email'){
+              setEmailError(fieldError.message);
+            }
+
+            if(fieldError.field === 'password'){
+              setPasswordError(fieldError.message);
+            }
+          });
+        } else {
+          alert("Success !!");
+        }
+      })
+      .catch((err) => err);
+  }
 
   return (
           <div className="container mx-auto px-4 h-full">
@@ -129,7 +166,8 @@ const SignupForm = () => {
                       <div className="text-center mt-6">
                         <button
                           className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                          type="button"
+                          type="submit"
+                          name="submit"
                           style={{ transition: "all .15s ease" }}
                         >
                           Sign Up

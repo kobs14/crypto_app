@@ -4,47 +4,128 @@ import { useNavigate } from "react-router-dom";
 import githubSvg from "../../images/github.png";
 import googlePng from "../../images/google.png";
 
+import Loader from './Loader';
+
+import { useLogInMutation } from '../services/authControllerApi';
+import { useGetProfileQuery } from '../services/cryptoProfileApi';
+
 
 
 const LoginForm = () => {
-  // const [credentials, setCredentials] = useState({ username: '', password: '' });
-  // const [errors, setErrors] = useState({});
+  const [credentials, setCredentials] = useState({ username: '', password: '' });
+  const [errors, setErrors] = useState({});
 
-  // const handleLoginForm = (evt) => {
-  //   evt.preventDefault();
+//   const { data: userInfo, isFetching, isLoading } = useLogInQuery(
+//     // JSON.stringify({
+//     //     username: props.get('username'),
+//     //     password: props.get('password'),
+//     //   }),
+// //       {
+// //     pollingInterval: 3000,
+// //     refetchOnMountOrArgChange: true,
+// //     skip: false,
+// //   }
+// );
 
-  //   setErrors(errors => ({ ...validateCredentials(credentials) }));
-  // };
+  const navigateTo = useNavigate();
+  
 
-  // const validateCredentials = (credentials) => {
-  //   let errors = {};
+  const handleLoginForm = (evt) => {
+    evt.preventDefault();
 
-  //   if (credentials.username === '') {
-  //     errors = Object.assign(errors, {
-  //       username: 'This field is required',
-  //     });
-  //   }
+    setErrors(errors => ({ ...validateCredentials(credentials) }));
+    console.log(errors);
+  };
 
-  //   if (credentials.password === '') {
-  //     errors = Object.assign(errors, {
-  //       password: 'This field is required',
-  //     });
-  //   }
+  const validateCredentials = (credentials) => {
+    let errors = {};
 
-  //   return errors;
-  // }
+    if (credentials.username === '') {
+      errors = Object.assign(errors, {
+        username: 'This field is required',
+      });
+    }
 
-  // const handleInputChange = (evt) => {
-  //   evt.persist()
-  //   setCredentials(credentials => ({ ...credentials, [evt.target.name]: evt.target.value }));
-  // }
+    if (credentials.password === '') {
+      errors = Object.assign(errors, {
+        password: 'This field is required',
+      });
+    }
+
+    return errors;
+  }
+
+  const handleInputChange = (evt) => {
+    evt.persist()
+    setCredentials(credentials => ({ ...credentials, [evt.target.name]: evt.target.value }));
+  }
+
+  const onSubmit = (e) => {
+    console.log("On Submit")
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const { data: userInfo, isFetching, isLoading } = useLogInMutation(
+      JSON.stringify({
+          username: formData.get('username'),
+          password: formData.get('password'),
+        }),
+     );
+
+    // const formData = new FormData(e.target);
+
+    // fetch("http://localhost:8080/api/auth/signin", {
+    //   method: "POST",
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     username: formData.get('username'),
+    //     password: formData.get('password'),
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     if(data.fieldErrors) {
+    //       data.fieldErrors.forEach(fieldError => {
+    //         if(fieldError.field === 'email'){
+    //           setEmailError(fieldError.message);
+    //         }
+
+    //         if(fieldError.field === 'password'){
+    //           setPasswordError(fieldError.message);
+    //         }
+    //       });
+    //     } else {
+    //       alert("Success !!");
+    //     }
+    //   })
+    //   .catch((err) => err);
 
 
-  const navigate = useNavigate();
 
-   const handleCreateNewAccount = () => {
-    navigate("/signup");
-   }
+    if (isLoading) return <div>Loading...</div>
+
+    return (
+        <div>
+            {isFetching ? '...refetching' : ''}
+            {userInfo && userInfo.map((user)=>{
+            return <li key={user.id}>{user.username}</li>
+            })}
+        </div>
+    );
+  }
+
+
+  // const navigate = useNavigate();
+
+   const handleCreateNewAccount = () => navigateTo('/signup');
+
+  //  const handleProfileApi = () => {
+  //   console.log(data);
+  //  };
+
+  //  if (isFetching) return <Loader />;
 
   return (
   //   <form className="flex flex-wrap w-full" onSubmit={handleLoginForm.bind(this)}>
@@ -131,7 +212,7 @@ const LoginForm = () => {
                     <div className="text-gray-500 text-center mb-3 font-bold">
                       <small>Or sign in with credentials</small>
                     </div>
-                    <form>
+                    <form id="stripe-login" method="POST" onSubmit={onSubmit}>
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -140,11 +221,18 @@ const LoginForm = () => {
                           User Name
                         </label>
                         <input
+                          id="username"
                           type="username"
+                          name="username"
                           className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                           placeholder="User Name"
+                          value={credentials.username}
+                          onChange={handleInputChange.bind(this)}
                           style={{ transition: "all .15s ease" }}
                         />
+                        {errors.hasOwnProperty('username') &&
+                          <p class="text-red-500 text-xs italic">{errors.username}</p>
+                        }
                       </div>
 
                       {/* <div className="relative w-full mb-3">
@@ -170,11 +258,18 @@ const LoginForm = () => {
                           Password
                         </label>
                         <input
+                          id="password"
                           type="password"
-                          className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                          name='password'
+                          className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full "
                           placeholder="Password"
+                          value={credentials.password}
+                          onChange={handleInputChange.bind(this)}
                           style={{ transition: "all .15s ease" }}
                         />
+                         {errors.hasOwnProperty('username') &&
+                          <p class="text-red-500 text-xs italic">{errors.username}</p>
+                         }
                       </div>
                       <div>
                         <label className="inline-flex items-center cursor-pointer">
@@ -193,7 +288,8 @@ const LoginForm = () => {
                       <div className="text-center mt-6">
                         <button
                           className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                          type="button"
+                          type="submit"
+                          name="submit"
                           style={{ transition: "all .15s ease" }}
                         >
                           Sign In
@@ -206,7 +302,7 @@ const LoginForm = () => {
                   <div className="w-1/2">
                     <a
                       href="#pablo"
-                      onClick={e => e.preventDefault()}
+                      // onClick={handleProfileApi}
                       className="text-gray-300"
                     >
                       <small>Forgot password?</small>
@@ -215,7 +311,7 @@ const LoginForm = () => {
                   <div className="w-1/2 text-right">
                     <a
                       href="#pablo"
-                      onClick={handleCreateNewAccount()}
+                      onClick={handleCreateNewAccount}
                       className="text-gray-300"
                     >
                       <small>Create new account</small>
