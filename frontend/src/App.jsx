@@ -3,9 +3,10 @@ import { Footer, Navbar } from "./components"
 import { Route, Routes, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
-import { Homepage, Cryptocurrencies, News, LoginForm, Services, CryptoDetails, SignupForm } from './components'
+import { Homepage, Cryptocurrencies, News, LoginForm, Services, CryptoDetails, SignupForm, UserProfile, Login } from './components'
 import './App.css'
 import { formatCountdown } from 'antd/lib/statistic/utils';
+
 
 const App = () => {
   return (
@@ -20,8 +21,10 @@ const App = () => {
               <Route exact path="/cryptocurrencies" element={<Cryptocurrencies/>}/>
               <Route exact path="/crypto/:coinId" element={<CryptoDetails/>}/>
               <Route exact path="/news" element={<News/>}/>
-              <Route exact path="/login" element={<LoginForm/>}/>
+              <Route exact path="/login" element={<Login/>}/>
               <Route exact path="/signup" element={<SignupForm/>}/>
+              {/* <Route exact path="/profile" render={(props) => <UserProfile {...props}/>}/> */}
+              <Route exact path="/profile" element={<SignupForm props/>}/>
             </Routes>
           </div>
         </Layout>

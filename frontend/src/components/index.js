@@ -8,4 +8,6 @@ export { default as LoginForm } from './LoginForm';
 export { default as SignupForm } from './SignupForm';
 export { default as CryptoDetails } from "./CryptoDetails";
 export { default as Services } from "./Services";
+export { default as UserProfile } from "./UserProfile";
+export { default as Login } from "./Login";
 // export { default as Transactions } from "./Transactions";
