@@ -56,7 +56,7 @@ const Login = (props) => {
 
     // console.log("Need to navigate to /profile");
 
-    navigateTo('/profile');
+    navigateTo('/');
   }
 
   return (
