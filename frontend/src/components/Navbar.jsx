@@ -19,7 +19,7 @@ function linkToPage(title) {
     case "News":
       return '/news';
     case "Wallets":
-      return '/cryptocurrencies';
+      return '/walletlog';
     case "Login":
       return '/login';
     default:

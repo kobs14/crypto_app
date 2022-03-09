@@ -2,6 +2,9 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   mode: "jit",
   darkMode: false, // or 'media' or 'class'
+  content: [
+    "./node_modules/flowbite/**/*.js"
+  ],
   theme: {
     fontFamily: {
       display: ["Open Sans", "sans-serif"],
@@ -31,5 +34,8 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require('flowbite/plugin'),
+  ],
 };
