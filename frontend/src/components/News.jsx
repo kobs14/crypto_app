@@ -59,11 +59,8 @@ const News = ({ simplified}) => {
     //   </Row>
 
         <Row  className="grid grid-cols-3 gap-6 pt-6 px-8">
-        {/* <div class="row-span-3 ...">01</div>
-        <div class="col-span-2 ...">02</div>
-        <div class="row-span-2 col-span-2 ...">03</div> */}
             {!simplified && (
-                    <Col className="text-white col-span-3 flex justify-center mb-10 " >
+                    <Col className="col-span-3 flex justify-center mb-10" >
                         <Select
                         showSearch
                         className="select-news"
@@ -73,7 +70,7 @@ const News = ({ simplified}) => {
                         filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         >
                         <Option value="Cryptocurency">Cryptocurrency</Option>
-                        {data?.data?.coins?.map((currency) => <Option value={currency.name}>{currency.name}</Option>)}
+                        {data?.data?.coins?.map((currency) => <Option value={currency.name} key={currency.uuid}>{currency.name}</Option>)}
                         </Select>
                     </Col>
                     )}
@@ -84,13 +81,20 @@ const News = ({ simplified}) => {
                         <a href={news.url} target="_blank" rel="noreferrer" >
                             <div className="news-image-container mx-4 my-5">
                                 <Title className="news-title text-lg font-medium">{news.name}</Title>
-                                <img style={{ maxWidth: '200px', macHeight: '80px'}} src={news?.image?.thumbnail?.contentUrl || demoImage} alt="news" />
+                                <img style={{ maxWidth: '200px', maxHeight: '100px'}} src={news?.image?.thumbnail?.contentUrl || demoImage} alt="news" />
                             </div>
                             <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
                             <div className="provider-container text-xs">
                                 <div>
-                                    <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="" />
-                                    <Text className="provider-name ">{news.provider[0]?.name}</Text>
+                                    <Avatar size={{
+                                                    xs: 24,
+                                                    sm: 32,
+                                                    md: 32,
+                                                    lg: 32,
+                                                    xl: 32,
+                                                    xxl: 32,
+                                                    }} src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt=""/>
+                                    <Text className="provider-name">{news.provider[0]?.name}</Text>
                                 </div>
                                 <Text className='text-black'>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
                             </div>
