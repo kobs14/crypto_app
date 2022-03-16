@@ -51,9 +51,27 @@ const CryptoDetails = () => {
           </Title>
           <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
         </Col>
-        <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
+        <div className="text-base mt-4 ml-6">
+             {/* <div className="bg-gray-100 ease-in duration-150 hover:bg-gray-200 pb-2 pt-1 px-3 rounded-sm"> */}
+                  {/* <select aria-label="select year"  className="text-xs text-gray-600 dark:text-gray-400 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 rounded">
+                  </select> */}
+                  {/* <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
+                   {time.map((date) => <Option key={date}>{date}</Option>)}
+                  </Select> */}
+              {/* </div> */}
+              <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
+
+                {/* <!-- Dropdown menu --> */}
+              <div id="dropdown" className="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
+                 <ul className="py-1" aria-labelledby="dropdownButton">
+                    {time.map((date) => <li key={date}>{date}</li>)}
+                </ul>
+
+              </div>
+         </div>
+        {/* <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
           {time.map((date) => <Option key={date}>{date}</Option>)}
-        </Select>
+        </Select> */}
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
         <Col className="stats-container">
           <Col className="coin-value-statistics">

@@ -81,7 +81,7 @@ const News = ({ simplified}) => {
                         <a href={news.url} target="_blank" rel="noreferrer" >
                             <div className="news-image-container mx-4 my-5">
                                 <Title className="news-title text-lg font-medium">{news.name}</Title>
-                                <img style={{ maxWidth: '200px', maxHeight: '100px'}} src={news?.image?.thumbnail?.contentUrl || demoImage} alt="news" />
+                                <img style={{ maxWidth: '200px', maxHeight: '200px'}} src={news?.image?.thumbnail?.contentUrl || demoImage} alt="news" />
                             </div>
                             <p>{news.description.length > 100 ? `${news.description.substring(0, 100)}...` : news.description}</p>
                             <div className="provider-container text-xs">

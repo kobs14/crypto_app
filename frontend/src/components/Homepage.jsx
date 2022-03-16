@@ -32,12 +32,12 @@ const Homepage = () => {
                     <p className="text-center mt-5 text-white font-light">
                          Explore the crypto world. Buy and sell cryptocurrencies easily.
                     </p>
-                    <div className="text-center mt-14 text-white font-light grid grid-cols-2 gap-4 gap-x-1">
-                         <div><Statistic title="Total Cryptocurrencies" value={globalStats.total}/></div>
-                         <div><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)}/></div>
-                         <div><Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap)}/></div>
-                         <div><Statistic title="Total 24h volume" value={millify(globalStats.total24hVolume)}/></div>
-                         <div><Statistic title="Total Markets" value={millify(globalStats.totalMarkets)}/></div>
+                    <div className="text-center mt-14 text-white font-light grid grid-cols-4 gap-4 gap-x-0.5">
+                         <div className="col-start-2 col-end-3"><Statistic title="Total Cryptocurrencies" value={globalStats.total}/></div>
+                         <div className="col-start-3 col-span-1"><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)}/></div>
+                         <div className="col-start-2 col-end-3"><Statistic title="Total Markets" value={millify(globalStats.totalMarkets)}/></div>
+                         <div className="col-start-3 col-span-1"><Statistic title="Total 24h volume" value={millify(globalStats.total24hVolume)}/></div>
+                         <div className="col-start-2 col-end-3"><Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap)}/></div>
                     </div>
                     <div className='mt-20 mb-6 items-center justify-between text-white font-light text-center grid grid-cols-2'>
                          <Title className="text-xl">Top 10 Cryptocurrencies</Title>
