@@ -7,7 +7,7 @@ import { BsInfoCircle } from "react-icons/bs";
 const Walletlogin = () => {
     return (
 
-     <div>
+     <div className='flex justify-center gap-12 '>
         <div className="p-4 max-w-sm bg-white rounded-lg border shadow-md sm:p-6 dark:bg-gray-800 dark:border-gray-700">
             <h5 className="mb-3 text-base font-semibold text-gray-900 lg:text-xl dark:text-white">
                 Connect wallet
@@ -41,7 +41,7 @@ const Walletlogin = () => {
             </div>
        </div>
 
-       <div className="p-3 flex justify-end items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card .white-glassmorphism ">
+       <div className="p-3 flex items-start flex-col rounded-xl h-40 sm:w-72 w-full my-5 eth-card .white-glassmorphism ">
             <div className="flex justify-between flex-col w-full h-full">
               <div className="flex justify-between items-start">
                 <div className="w-10 h-10 rounded-full border-2 border-white flex justify-center items-center">
