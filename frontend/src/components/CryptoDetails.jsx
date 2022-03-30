@@ -14,7 +14,7 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
     const { coinId } = useParams();
-    const [timeperiod, setTimeperiod] = useState('7d');
+    const [timeperiod, setTimeperiod] = useState('5y');
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
     const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
     const cryptoDetails = data?.data?.coin;
@@ -46,7 +46,7 @@ const CryptoDetails = () => {
     return (
       <Col className="coin-detail-container text-white">
         <Col className="coin-heading-container">
-          <Title level={2} className="coin-name">
+          <Title className="coin-name text-2xl">
             {data?.data?.coin.name} ({data?.data?.coin.symbol}) Price
           </Title>
           <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
