@@ -59,39 +59,27 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     },
   };
   return (
-    // <>
-    //   <Row className="chart-header">
-    //     <Typography.Title level={2} className="chart-Typography.Title">
-    //       {coinName} Price Chart
-    //     </Typography.Title>
-    //     <Col className="chart-container">
-    //       <Typography.Title level={5} className="chart-Typography.Title">
-    //         {coinHistory?.data?.change}
-    //       </Typography.Title>
-    //       <Typography.Title level={5} className="chart-Typography.Title">
-    //         Current {coinName} Price: $ {currentPrice}
-    //       </Typography.Title>
-    //     </Col>
-    //   </Row>
-    //   <Line data={data} options={options} />
-    // </>
     <div class="flex items-center justify-center py-8 px-4">
-      <div class="w-11/12 lg:w-2/3">
+      <div class="w-11/12 ">
                 <div className="flex flex-col justify-between h-full">
                   <div>
                        <div className="lg:flex w-full justify-between">
                           <h3 className=" leading-5 text-base md:text-xl font-bold">{coinName} Price Chart</h3>
                           <div className="price-container flex justify-between lg:justify-start mt-2 md:mt-4 lg:mt-0">
-                                    <Typography.Title>Change: {coinHistory?.data?.change}</Typography.Title>
-                                    <Typography.Title>
+                                    <Typography.Title className="price-change">Change: {coinHistory?.data?.change < 0 ? 
+                                      <h1 className='red'>{Number(coinHistory?.data?.change).toFixed(2)}%</h1>
+                                       : 
+                                      <h1 className='green'>{Number(coinHistory?.data?.change).toFixed(2)}%</h1>
+                                    }</Typography.Title>
+                                    <Typography.Title className="current-price">
                                         Current {coinName} Price: $ {currentPrice}
                                     </Typography.Title>
                                     {/* <Title>New title</Title> */}
                           </div>
                        </div>
                   </div>
-                  <div className="w-11/12">
-                      <div className="mt-4 w-full">
+                  <div className="w-full">
+                      <div className="mt-4 w-full rounded-lg bg-gray-300 shadow-lg">
                               <Line data={data} options={options} width={1025} height={400} />
                       </div>
                   </div>
