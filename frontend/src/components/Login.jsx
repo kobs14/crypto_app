@@ -51,6 +51,8 @@ const Login = (props) => {
 
   const handleCreateNewAccount = () => navigateTo('/signup');
 
+  const handleForgetPassword = () => navigateTo('/passwordrecovery')
+
   if (isLoggedIn) {
     // return <Redirect to="/profile" />;
 
@@ -215,7 +217,7 @@ const Login = (props) => {
                   <div className="w-1/2">
                     <a
                       href="#pablo"
-                      // onClick={handleProfileApi}
+                      onClick={handleForgetPassword}
                       className="text-gray-300"
                     >
                       <small>Forgot password?</small>
