@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
+import { Menu, Transition } from '@headlessui/react'
 import millify from 'millify';
+import { ChevronDownIcon } from '@heroicons/react/solid'
 import { Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
@@ -14,14 +16,10 @@ const { Option } = Select;
 
 const CryptoDetails = () => {
     const { coinId } = useParams();
-    const [timeperiod, setTimeperiod] = useState('5y');
+    const [timeperiod, setTimeperiod] = useState('7d');
     const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
     const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
     const cryptoDetails = data?.data?.coin;
-
-    console.log(timeperiod);
-
-    console.log(coinHistory);
   
     if (isFetching) return <Loader />;
   
@@ -51,43 +49,37 @@ const CryptoDetails = () => {
           </Title>
           <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
         </Col>
+         <div className="w-15 text-left mt-4">
+            <Menu as="div" className="relative inline-block text-center">
+              <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm text-white bg-blue-700 hover:bg-blue-800 font-small rounded-md hover:bg-opacity-50 focus:outline-none focus:ring-blue-300 focus-visible:ring-4 focus-visible:ring-white focus-visible:ring-opacity-75">
+                {timeperiod}
+                <ChevronDownIcon
+                  className="w-3 h-5 ml-2 -mr-1 text-violet-200 hover:text-violet-100"
+                  aria-hidden="true"
+                  />
+              </Menu.Button>
+              <Menu.Items className="block absolute w-full py-2 px-4 text-sm origin-top-right text-white bg-gray-700 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 
-        {/* <div className="bg-gray-100 dark:bg-gray-700 ease-in duration-150 hover:bg-gray-200 text-sm text-center inline-flex items-center rounded-sm">
-             <Select className="select-timeperiod text-xs text-white bg-transparent focus:outline-none" defaultValue="7d" placeholder="Select Timeperiod">
-                {time.map((date) => <Option key={date}>{date}</Option>)}
-             </Select>
-         </div> */}
-        <div className="text-base mt-4 ml-6">
-          <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded-lg text-sm px-2.5 py-1 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">7d <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
-
-            {/* <!-- Dropdown menu --> */}
-            <div id="dropdown" class="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                <ul class="py-1" aria-labelledby="dropdownButton">
-                    {time.map((date) => <li key={date}>{date}</li>)}
-                </ul>
-            </div>
-        </div>
-
-        {/* <div className="text-base mt-4 ml-6"> */}
-             {/* <div className="bg-gray-100 ease-in duration-150 hover:bg-gray-200 pb-2 pt-1 px-3 rounded-sm">  */}
-                  {/* <select aria-label="select year"  className="text-xs text-gray-600 dark:text-gray-400 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 rounded">
-                  </select> */}
-                  {/* <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
-                   {time.map((date) => <Option key={date}>{date}</Option>)}
-                  </Select> */}
-             {/* </div> */}
-              {/* <button id="dropdownButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown button <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button> */}
-
-                {/* <!-- Dropdown menu --> */}
-              {/* <div id="dropdown" className="hidden z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700">
-                 <ul className="py-1" aria-labelledby="dropdownButton">
-                    {time.map((date) => <li key={date}>{date}</li>)}
-                </ul> 
-                </div> */}
-         {/* </div> */}
-        {/* <Select defaultValue="7d" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
-          {time.map((date) => <Option key={date}>{date}</Option>)}
-        </Select> */}
+                {time.map((data) => 
+                  <Menu.Item key={data}>
+                  {({ active }) => (
+                    <button
+                       className={`${
+                       active ? 'bg-blue-800 text-white' : 'text-white'
+                    } group flex rounded-md items-center w-full px-1 py-1 text-sm`}
+                    onClick={() => {
+                      setTimeperiod(data)
+                      }}
+                  >
+                    {data}
+                  </button>
+                  )}
+                </Menu.Item>
+                )}
+               </Menu.Items>
+            </Menu>
+         </div>
+      
         <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
         <Col className="stats-container">
           <Col className="coin-value-statistics">

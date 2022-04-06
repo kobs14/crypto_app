@@ -73,7 +73,7 @@ const PasswordRecov = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>:
+            </div> :
         
             <div className="flex content-center items-center justify-center h-full">
               <div className="w-full lg:w-4/12 px-4">

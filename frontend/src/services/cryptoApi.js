@@ -22,8 +22,9 @@ export const cryptoApi = createApi({
          }),
          // Note: Change the coin price history endpoint from this - `coin/${coinId}/history/${timeperiod} to this - `coin/${coinId}/history?timeperiod=${timeperiod}`
          ///Qwsogvtv82FCd/history?timePeriod=24h
+         //Optional param : referenceCurrencyUuid=yhjMzLPhuIDl is US Dollars, default and the only option for now. next version will have option
         getCryptoHistory: builder.query({
-         query: ({ coinId, timePeriod }) => createRequest(`/coin/${coinId}/history?timeperiod=${timePeriod}`),
+         query: ({ coinId, timeperiod }) => createRequest(`/coin/${coinId}/history?timePeriod=${timeperiod}`),
          })
 }),
 });
