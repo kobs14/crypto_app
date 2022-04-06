@@ -27,18 +27,20 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
-  for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
-    coinTimestamp.push(
-      new Date(coinHistory.data.history[i].timestamp).toLocaleDateString()
-    );
-    coinPrice.push(coinHistory.data.history[i].price);
+  const len = coinHistory?.data?.history?.length;
+  const yLen = coinHistory?.data?.history?.length;
+  for (let i = len-1; i > 0; i--) {
+    coinPrice.push(coinHistory?.data?.history[i].price);
+  }
+  for (let i = yLen-1; i > 0; i--) {
+    coinTimestamp.push(new Date(coinHistory?.data?.history[i].timestamp*1000).toLocaleDateString("en-US"));
   }
 
   const data = {
     labels: coinTimestamp,
     datasets: [
       {
-        label: 'Price in USD',
+        label: 'Price in USD $',
         data: coinPrice,
         fill: false,
         backgroundColor: '#0071bd',
@@ -59,8 +61,8 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
     },
   };
   return (
-    <div class="flex items-center justify-center py-8 px-4">
-      <div class="w-11/12 ">
+    <div className="flex items-center justify-center py-8 px-4">
+      <div className="w-11/12 ">
                 <div className="flex flex-col justify-between h-full">
                   <div>
                        <div className="lg:flex w-full justify-between">
@@ -74,7 +76,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
                                     <Typography.Title className="current-price">
                                         Current {coinName} Price: $ {currentPrice}
                                     </Typography.Title>
-                                    {/* <Title>New title</Title> */}
                           </div>
                        </div>
                   </div>

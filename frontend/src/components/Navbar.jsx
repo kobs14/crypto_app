@@ -15,7 +15,7 @@ function linkToPage(title) {
     case "Cryptocurrencies":
       return '/cryptocurrencies';
     case "Exchanges":
-      return '/cryptocurrencies';
+      return '/exchanges';
     case "News":
       return '/news';
     case "Wallets":
@@ -44,7 +44,7 @@ const Navbar = () => {
     }
 
     const handleLogout = () => {
-      console.log("LOgging out: or at leat trying!")
+      console.log("Logging out: or at least trying!")
       setLoading(true);
   
       dispatch(logout())

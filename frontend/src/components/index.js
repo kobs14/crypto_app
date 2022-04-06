@@ -10,6 +10,7 @@ export { default as Login } from "./Login";
 export { default as Register } from "./Register";
 export { default as Profile } from "./Profile";
 export { default as WalletLogin } from "./WalletLogin";
-export {default as PasswordRecov} from "./PasswordRecov"
+export {default as PasswordRecov} from "./PasswordRecov";
+export {default as Exchanges} from "./Exchanges"
 
 // export { default as Transactions } from "./Transactions";

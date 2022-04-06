@@ -9,7 +9,7 @@ import { Layout, Typography, Space } from 'antd';
 import { logout } from "./services/slices/auth";
 import EventBus from "./common/EventBus";
 
-import { Homepage, Cryptocurrencies, News, Services, CryptoDetails, Login, Register, Profile, WalletLogin, PasswordRecov} from './components'
+import { Homepage, Cryptocurrencies, News, Services, CryptoDetails, Login, Register, Profile, WalletLogin, PasswordRecov, Exchanges} from './components'
 import './App.css'
 import { formatCountdown } from 'antd/lib/statistic/utils';
 
@@ -60,6 +60,7 @@ const App = () => {
               <Route exact path="/signup" element={<Register/>}/>
               <Route exact path="/passwordrecovery" element={<PasswordRecov/>}/>
               <Route exact path="/profile" element={<Profile/>}/>
+              <Route exact path="/exchanges" element={<Exchanges/>}/>
             </Routes>
           </div>
         </Layout>

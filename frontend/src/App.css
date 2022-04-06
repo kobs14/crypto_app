@@ -184,7 +184,7 @@ a:hover {
 }
 
 .coin-detail-container {
-  margin: 30px;
+  margin: 0px 30px 10px;
 }
 
 .coin-heading-container {
@@ -193,8 +193,8 @@ a:hover {
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid var(--border);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 1px;
+  padding-bottom: 5px;
   gap: 10px;
 }
 
@@ -225,7 +225,7 @@ a:hover {
 
 .coin-details-heading {
   font-weight: 700 !important;
-  margin-top: 20px !important;
+  margin-top: 10px !important;
   color: var(--pink) !important;
 }
 
@@ -308,7 +308,6 @@ a:hover {
 
 .coin-link:hover,
 .coin-stats:hover {
-  background-color: var(--bgSecondary);
 }
 
 @media screen and (max-width: 1000px) {
