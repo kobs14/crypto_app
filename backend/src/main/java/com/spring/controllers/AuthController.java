@@ -25,15 +25,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.models.ERole;
-import com.spring.models.Role;
-import com.spring.models.User;
 import com.spring.payload.request.LoginRequest;
 import com.spring.payload.request.SignupRequest;
 import com.spring.payload.response.JwtResponse;
 import com.spring.payload.response.MessageResponse;
-import com.spring.repository.RoleRepository;
-import com.spring.repository.UserRepository;
 import com.spring.security.jwt.JwtUtils;
 import com.spring.security.services.UserDetailsImpl;
 
@@ -102,6 +97,7 @@ public class AuthController {
 		if (strRoles == null) {
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
 					.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+			// Role userRole = new Role(ERole.ROLE_USER);
 			roles.add(userRole);
 		} else {
 			strRoles.forEach(role -> {
