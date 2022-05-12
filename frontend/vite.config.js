@@ -6,10 +6,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     // generate manifest.json in outDir
+   // host: '0.0.0.0',
     manifest: true,
-    rollupOptions: {
-      // overwrite default .html entry
-      input: './main.jsx'
-    }
+    // rollupOptions: {
+    //   // overwrite default .html entry
+    //   input: './main.jsx'
+    // }
   }
 })

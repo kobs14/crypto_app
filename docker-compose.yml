@@ -1,0 +1,21 @@
+services:
+  API:
+    image: 'c-crypto.jar'
+    ports:
+      - "8080:8080"
+    #AWS RDS db credentials here
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: arsenal18
+      # my-db-springboot.cphjaxjsdjed.ap-south-1.rds.amazonaws.com
+      POSTGRES_URL: database-crypto-app.csakgbcqlzay.us-east-1.rds.amazonaws.com/clientsDB
+      POSTGRES_PORT: 5432
+
+#  frontend:
+#    build:
+#      context: frontend
+#      dockerfile: Dockerfile
+#    volumes:
+#        - ./:/app
+#    ports:
+#       - '3000:3000'
