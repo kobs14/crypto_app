@@ -1,7 +1,7 @@
 
-#C-Crypto Web Application
+# C-Crypto Web Application
 
-##Start the app
+## Start the app
 Note this command starts the frontend. Server Side (Backend) is deployed and runing on AWS ECS. 
 
 ```bash
