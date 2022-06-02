@@ -4,33 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f95dc0-1c8f-4f7f-b5b0-662a47f33242" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_200.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_11_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_2.xml" afterDir="false" />
+    <list default="true" id="e9f95dc0-1c8f-4f7f-b5b0-662a47f33242" name="Changes" comment="tests added (Junit 5)">
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/currency_page1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/currency_page2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/home_page1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/home_page2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/login_page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/signup_page.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-refresh-token-jwt-example-flow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-spring-security-postgresql-jwt-authentication-architecture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-spring-security-postgresql-jwt-authentication-flow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme_PNGs/wallet_page.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/spring-boot-security-postgresql.iml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/spring-boot-security-postgresql.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/spring/security/services/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/spring/security/services/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/SpringBootSecurityPostgresqlApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/SpringBootSecurityPostgresqlApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controllers/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/controllers/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/controllers/TestController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/models/ERole.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/models/ERole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/models/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/models/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/models/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/request/LoginRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/request/LoginRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/request/SignupRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/request/SignupRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/response/JwtResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/response/JwtResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/response/MessageResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/payload/response/MessageResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/RoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/RoleRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/AuthEntryPointJwt.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/AuthEntryPointJwt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/AuthTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/AuthTokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/jwt/JwtUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/services/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/services/UserDetailsImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/spring/security/services/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/spring/security/services/UserDetailsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/@ant-design_icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/@ant-design_icons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/@reduxjs_toolkit_query_react.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/@reduxjs_toolkit_query_react.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/_metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/antd.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/antd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/antd_lib_statistic_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/antd_lib_statistic_utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-52SUGNAM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-52SUGNAM.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-5BEK57TW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-5BEK57TW.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-AEP63XJ6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-AEP63XJ6.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-B32U6RHW.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-B32U6RHW.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-DGV5CE4I.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-DGV5CE4I.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/react-redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/react-redux.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/yup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/yup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,16 +73,19 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/backend/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/src/test/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/readme_PNGs" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/readme_PNGs" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend/src/test/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/readme_PNGs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/backend" />
     </key>
@@ -198,6 +204,21 @@
       <option name="presentableId" value="Default" />
       <updated>1644949268719</updated>
     </task>
+    <task id="LOCAL-00001" summary="tests added (Junit 5)">
+      <created>1652874659999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652874659999</updated>
+    </task>
+    <task id="LOCAL-00002" summary="tests added (Junit 5)">
+      <created>1653206782997</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653206782997</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -222,5 +243,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tests added (Junit 5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests added (Junit 5)" />
   </component>
 </project>
