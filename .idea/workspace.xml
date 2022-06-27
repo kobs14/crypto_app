@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f95dc0-1c8f-4f7f-b5b0-662a47f33242" name="Changes" comment="tests added (Junit 5)">
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/currency_page1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/currency_page2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/home_page1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/home_page2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/login_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/signup_page.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-refresh-token-jwt-example-flow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-spring-security-postgresql-jwt-authentication-architecture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/spring-boot-spring-security-postgresql-jwt-authentication-flow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme_PNGs/wallet_page.png" afterDir="false" />
+    <list default="true" id="e9f95dc0-1c8f-4f7f-b5b0-662a47f33242" name="Changes" comment="Readme updated.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/@ant-design_icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/@ant-design_icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/@reduxjs_toolkit_query_react.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/@reduxjs_toolkit_query_react.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/antd.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/antd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/antd_lib_statistic_utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/antd_lib_statistic_utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-52SUGNAM.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-52SUGNAM.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-5BEK57TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-5BEK57TW.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-AEP63XJ6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-AEP63XJ6.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-B32U6RHW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-B32U6RHW.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-DGV5CE4I.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/chunk-DGV5CE4I.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/react-redux.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/react-redux.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/yup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/yup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +190,35 @@
       <option name="project" value="LOCAL" />
       <updated>1653206782997</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Readme updated. clear dirty code">
+      <created>1654172940128</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654172940128</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Readme updated. clear dirty code">
+      <created>1654172984790</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654172984790</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Readme updated.">
+      <created>1654173115470</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654173115470</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Readme updated.">
+      <created>1654173417127</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654173417127</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +232,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/backend" />
+                        <option value="dev" />
                       </list>
                     </value>
                   </entry>
@@ -246,6 +246,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tests added (Junit 5)" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests added (Junit 5)" />
+    <MESSAGE value="Readme updated. clear dirty code" />
+    <MESSAGE value="Readme updated." />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme updated." />
   </component>
 </project>
