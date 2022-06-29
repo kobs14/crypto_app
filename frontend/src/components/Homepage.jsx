@@ -8,6 +8,7 @@ import Cryptocurrencies from './Cryptocurrencies';
 import News from './News';
 import Loader from './Loader';
 import Services from './Services';
+import TwitterComponent from './TwitterComponent';
 
 const { Title } = Typography;
 
@@ -49,6 +50,7 @@ const Homepage = () => {
                          <Title className="text-sm"><Link to='/news'>Show More</Link></Title>
                     </div>
                     <News simplified/>
+                    <TwitterComponent/>
             </div>
         </div>
      </div>
