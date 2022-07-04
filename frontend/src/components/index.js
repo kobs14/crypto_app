@@ -12,6 +12,8 @@ export { default as Profile } from "./Profile";
 export { default as WalletLogin } from "./WalletLogin";
 export {default as PasswordRecov} from "./PasswordRecov";
 export {default as Exchanges} from "./Exchanges"
-export {default as TwitterComponent} from "./TwitterComponent"
+
+//*ADD EXPORTE TO TWIITERCOMPONENT!!! */
+// export {default as TwitterComponent} from "./TwitterComponent"
 
 // export { default as Transactions } from "./Transactions";

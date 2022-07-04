@@ -61,6 +61,7 @@ const App = () => {
               <Route exact path="/passwordrecovery" element={<PasswordRecov/>}/>
               <Route exact path="/profile" element={<Profile/>}/>
               <Route exact path="/exchanges" element={<Exchanges/>}/>
+              {/* <Route exact path="/twittercomponent" element={<TwitterComponent/>}/> */}
             </Routes>
           </div>
         </Layout>
