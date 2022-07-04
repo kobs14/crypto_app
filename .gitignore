@@ -18,6 +18,8 @@ target
 .classpath
 dist
 .firebase
+.firebaserc
+firebase.json
 
 
 # misc
