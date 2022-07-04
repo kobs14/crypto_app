@@ -1,10 +1,10 @@
 {
   "index.html": {
-    "file": "assets/index.675386c5.js",
+    "file": "assets/index.e9584565.js",
     "src": "index.html",
     "isEntry": true,
     "imports": [
-      "_vendor.49ab876c.js"
+      "_vendor.9d0b3da5.js"
     ],
     "css": [
       "assets/index.6f739b57.css"
@@ -14,7 +14,7 @@
       "assets/google.5101865e.png"
     ]
   },
-  "_vendor.49ab876c.js": {
-    "file": "assets/vendor.49ab876c.js"
+  "_vendor.9d0b3da5.js": {
+    "file": "assets/vendor.9d0b3da5.js"
   }
 }
