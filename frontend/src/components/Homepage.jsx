@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, {  } from 'react'
 
 import { Link } from 'react-router-dom';
 import millify from 'millify';
-import { Typography, Row, Col,  Statistic } from 'antd';
+import { Typography, Statistic } from 'antd';
 import {useGetCryptosQuery} from '../services/cryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
 import News from './News';
