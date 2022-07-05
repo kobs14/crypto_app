@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { Footer, Navbar } from "./components"
 
-import { Route, Routes, Link } from 'react-router-dom';
-import { Layout, Typography, Space } from 'antd';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from 'antd';
 
 import { logout } from "./services/slices/auth";
 import EventBus from "./common/EventBus";
 
 import { Homepage, Cryptocurrencies, News, Services, CryptoDetails, Login, Register, Profile, WalletLogin, PasswordRecov, Exchanges} from './components'
 import './App.css'
-import { formatCountdown } from 'antd/lib/statistic/utils';
 
 
 const App = () => {
