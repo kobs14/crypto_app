@@ -1,8 +1,10 @@
 # C-Crypto Web Application
 
-## Start the app
+This demo is deployed to Firebase and visible at https://c-crypto-1bf5f.web.app/
 
-Note this command starts the frontend. Server Side (Backend) is deployed and runing on AWS ECS.
+## Start the app locally
+
+Note this commands starts the frontend locally at http://localhost:3000/. Server Side (Backend) is deployed and runing on AWS ECS.
 
 ```bash
 cd /frontend
